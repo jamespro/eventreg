@@ -1,0 +1,19 @@
+{
+  "name": "eventreg",
+  "version": "1.0.0",
+  "description": "Event Registration Platform",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamespro/eventreg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamespro/eventreg/issues"
+  },
+  "homepage": "https://github.com/jamespro/eventreg#readme"
+}
