@@ -55,6 +55,31 @@ class OnsiteEvent extends Event {
         return this._eventcountry
     }
 }
+class HybridEvent extends Event {
+    constructor(eventid, eventcode, eventtype, eventname, eventstartdate, eventenddate, eventvenue, eventcity, eventstate, eventcountry, availablepostevent){
+        super(eventid, eventcode, eventtype, eventname, eventstartdate, eventenddate)
+        this._eventvenue = eventvenue
+        this._eventcity = eventcity
+        this._eventstate = eventstate
+        this._eventcountry = eventcountry
+        this._availablepostevent = availablepostevent
+    }
+    get eventvenue(){
+        return this._eventvenue
+    }
+    get eventcity(){
+        return this._eventcity
+    }
+    get eventstate(){
+        return this._eventstate
+    }
+    get eventcountry(){
+        return this._eventcountry
+    }
+    get availablepostevent(){
+        return this._availablepostevent
+    }
+}
 class VirtualEvent extends Event{
     constructor(eventid, eventcode, eventtype, eventname, eventstartdate, eventenddate, availablepostevent){
         super(eventid, eventcode, eventtype, eventname, eventstartdate, eventenddate)
