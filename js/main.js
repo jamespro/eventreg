@@ -91,7 +91,8 @@ class VirtualEvent extends Event{
 }
 
 let pack0921 = new OnsiteEvent(0,'pack0921', 'onsite','International Packaging Expo 2021','9/1/2021','9/15/2021','Las Vegas Convention Center','Las Vegas','NV','United States')
-let spie1021 = new VirtualEvent(1,'spie1021','virtual','2021 SPIE Engineering Expo','10/15/2021','10/20/2021',true)
+
+let spie1021 = new VirtualEvent(1, 'spie1021', 'virtual', '2021 SPIE Engineering Expo', '10/15/2021', '10/20/2021', true)
 
 let events = [pack0921,spie1021]
 
