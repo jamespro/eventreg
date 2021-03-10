@@ -96,7 +96,7 @@ let spie1021 = new VirtualEvent(1, 'spie1021', 'virtual', '2021 SPIE Engineering
 
 let events = [pack0921,spie1021]
 
-for( a of events ){
-    a.showEventDetails()
+for( e of events ){
+    e.showEventDetails()
 }
 
