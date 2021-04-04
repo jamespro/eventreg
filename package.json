@@ -4,6 +4,7 @@
   "description": "Event Registration Platform",
   "main": "js/main.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/jamespro/eventreg/issues"
   },
-  "homepage": "https://github.com/jamespro/eventreg#readme"
+  "homepage": "https://github.com/jamespro/eventreg#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongo": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
