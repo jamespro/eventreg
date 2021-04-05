@@ -64,7 +64,7 @@ app.post('/createEvent', (req, res) => {
     })
         .then(result => {
             console.log('Event Added!')
-            res.redirect('/admin/event')
+            res.redirect('/admin/events')
         })
         .catch(error => console.error(error))
 })

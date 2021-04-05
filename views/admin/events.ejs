@@ -46,33 +46,33 @@
             
             <form action="/createEvent" method="POST">
             <label for="eventcode">eventcode:</label>
-            <input type="text" placeholder="eventcode" name="eventcode" autofocus="autofocus"><br>
+            <input type="text" placeholder="eventcode" name="eventcode" value="pack0921" autofocus="autofocus"><br>
             <label for="eventname">eventname:</label>
-            <input type="text" placeholder="eventname" name="eventname" value="">
+            <input type="text" placeholder="eventname" name="eventname" value="International Packaging Expo 2021">
             <label for="eventstartdate">eventstartdate:</label>
-            <input type="text" placeholder="eventstartdate" name="eventstartdate" value="">
+            <input type="text" placeholder="YYYY-mm-ddTHH:MM:ss" name="eventstartdate" value="2021-09-01T00:00:01">
             <label for="eventenddate">eventenddate:</label>
-            <input type="text" placeholder="eventenddate" name="eventenddate" value="">
+            <input type="text" placeholder="YYYY-mm-ddTHH:MM:ss" name="eventenddate" value="2021-09-28T00:00:01">
             <label for="eventtype">eventtype:</label>
             <select name="eventtype">
-                <option value="onsite">onsite</option>
+                <option value="onsite" selected>onsite</option>
                 <option value="virtual">virtual</option>
                 <option value="hybrid">hybrid</option>
             </select>
             <label for="eventvenue">eventvenue:</label>
-            <input type="text" placeholder="eventvenue" name="eventvenue" value="">
+            <input type="text" placeholder="eventvenue" name="eventvenue" value="Las Vegas Convention Center">
             <label for="eventcity">eventcity:</label>
-            <input type="text" placeholder="eventcity" name="eventcity" value="">
+            <input type="text" placeholder="eventcity" name="eventcity" value="Las Vegas">
             <label for="eventstate">eventstate:</label>
-            <input type="text" placeholder="eventstate" name="eventstate" value="">
+            <input type="text" placeholder="eventstate" name="eventstate" value="NV">
             <label for="eventcountry">eventcountry:</label>
-            <input type="text" placeholder="eventcountry" name="eventcountry" value="">
+            <input type="text" placeholder="eventcountry" name="eventcountry" value="United States">
             <label for="availablepostevent">availablepostevent:</label>
-            <input type="text" placeholder="availablepostevent" name="availablepostevent" value="">
+            <input type="text" placeholder="availablepostevent" name="availablepostevent" value="false">
             <br>
             <input type="submit">
         </form>
 
-        <script src="js/main.js" async defer></script>
+        <script src="/js/main.js" async defer></script>
     </body>
 </html>
