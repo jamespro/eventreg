@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Event Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/style.css">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Event Registration</h1>
+        <h2>Events</h2>
+        <ul class="events">
+            <% for(let i=0; i < events.length; i++) {%>
+                <li class="events">
+                    <span class='id'><%= events[i]._id %></span>
+                    <span class='eventid'><%= events[i].eventid %></span>
+                    <span class='eventcode'><%= events[i].eventcode %></span>
+                    <span class='eventname'><%= events[i].eventname %></span>
+                    <span class='eventstartdate'><%= events[i].eventstartdate %></span>
+                    <span class='eventenddate'><%= events[i].eventenddate %></span>
+                    <span class='eventtype'><%= events[i].eventtype %></span>
+                    <span class='eventvenue'><%= events[i].eventvenue %></span>
+                    <span class='eventcity'><%= events[i].eventcity %></span>
+                    <span class='eventstate'><%= events[i].eventstate %></span>
+                    <span class='eventcountry'><%= events[i].eventcountry %></span>
+                    <span class='availablepostevent'><%= events[i].availablepostevent %></span>
+                    <span class='delete fas fa-trash'></span>
+                </li>
+                <% } %>
+            </ul>
+            <h2>Registrants</h2>
+            
+            <h2>Add an Event:</h2>
+            
+            <form action="/createEvent" method="POST">
+            <label for="eventcode">eventcode:</label>
+            <input type="text" placeholder="eventcode" name="eventcode" autofocus="autofocus"><br>
+            <label for="eventname">eventname:</label>
+            <input type="text" placeholder="eventname" name="eventname" value="">
+            <label for="eventstartdate">eventstartdate:</label>
+            <input type="text" placeholder="eventstartdate" name="eventstartdate" value="">
+            <label for="eventenddate">eventenddate:</label>
+            <input type="text" placeholder="eventenddate" name="eventenddate" value="">
+            <label for="eventtype">eventtype:</label>
+            <select name="eventtype">
+                <option value="onsite">onsite</option>
+                <option value="virtual">virtual</option>
+                <option value="hybrid">hybrid</option>
+            </select>
+            <label for="eventvenue">eventvenue:</label>
+            <input type="text" placeholder="eventvenue" name="eventvenue" value="">
+            <label for="eventcity">eventcity:</label>
+            <input type="text" placeholder="eventcity" name="eventcity" value="">
+            <label for="eventstate">eventstate:</label>
+            <input type="text" placeholder="eventstate" name="eventstate" value="">
+            <label for="eventcountry">eventcountry:</label>
+            <input type="text" placeholder="eventcountry" name="eventcountry" value="">
+            <label for="availablepostevent">availablepostevent:</label>
+            <input type="text" placeholder="availablepostevent" name="availablepostevent" value="">
+            <br>
+            <input type="submit">
+        </form>
+
+        <script src="js/main.js" async defer></script>
+    </body>
+</html>

@@ -7,8 +7,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TODO-JS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <title>Event Registration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
         <meta name="description" content="">
@@ -19,35 +19,37 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>TODO</h1>
-    <ul class="todos">
-        <% //for(let i=0; i < info.length; i++) {%>
-            <li class="todo">
-                <span class='id'><%//= info[i]._id %></span>
-                <span class='priority'><%//= info[i].priority %></span>
-                <span class='priorityup fas fa-chevron-up'></span>
-                <span class='prioritydown fas fa-chevron-down'></span>
-                <% //if (info[i].done) { %>
-                <span class='done done-<%//=info[i].done%> fas fa-check-square'></span>
-                <% //} else { %>
-                <span class='done done-<%//=info[i].done%> fas fa-square'></span>
+        <h1>Event Registration</h1>
+        <h2>Events</h2>
+        <ul class="reg">
+            <% //for(let i=0; i < info.length; i++) {%>
+                <li class="todo">
+                    <span class='id'><%//= info[i]._id %></span>
+                    <span class='priority'><%//= info[i].priority %></span>
+                    <span class='priorityup fas fa-chevron-up'></span>
+                    <span class='prioritydown fas fa-chevron-down'></span>
+                    <% //if (info[i].done) { %>
+                    <span class='done done-<%//=info[i].done%> fas fa-check-square'></span>
+                    <% //} else { %>
+                    <span class='done done-<%//=info[i].done%> fas fa-square'></span>
+                    <% //} %>
+                    <span class='description'><%//= info[i].description %></span>
+                    <span class='delete fas fa-trash'></span>
+                </li>
                 <% //} %>
-                <span class='description'><%//= info[i].description %></span>
-                <span class='delete fas fa-trash'></span>
-            </li>
-            <% //} %>
-    </ul>
-    
-    <h2>Add a TODO:</h2>
-    
-    <form action="/addTodo" method="POST">
-        <label for="description">Description:</label>
-        <input type="text" placeholder="Description" name="description" autofocus="autofocus"><br>
-        <label for="priority">Priority:</label>
-        <input type="number" placeholder="Priority" name="priority" value="3">
-        <br>
-        <input type="submit">
-    </form>
+        </ul>
+        <h2>Registrants</h2>
+
+        <h2>Add a TODO:</h2>
+        
+        <form action="/addTodo" method="POST">
+            <label for="description">Description:</label>
+            <input type="text" placeholder="Description" name="description" autofocus="autofocus"><br>
+            <label for="priority">Priority:</label>
+            <input type="number" placeholder="Priority" name="priority" value="3">
+            <br>
+            <input type="submit">
+        </form>
 
         <script src="js/main.js" async defer></script>
     </body>
