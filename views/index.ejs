@@ -24,35 +24,12 @@
         <ul>
             <li><a href="/admin/events/">Admin: Events</a></li>
         </ul>
-        <ul class="reg">
-            <% //for(let i=0; i < info.length; i++) {%>
-                <li class="todo">
-                    <span class='id'><%//= info[i]._id %></span>
-                    <span class='priority'><%//= info[i].priority %></span>
-                    <span class='priorityup fas fa-chevron-up'></span>
-                    <span class='prioritydown fas fa-chevron-down'></span>
-                    <% //if (info[i].done) { %>
-                    <span class='done done-<%//=info[i].done%> fas fa-check-square'></span>
-                    <% //} else { %>
-                    <span class='done done-<%//=info[i].done%> fas fa-square'></span>
-                    <% //} %>
-                    <span class='description'><%//= info[i].description %></span>
-                    <span class='delete fas fa-trash'></span>
-                </li>
-                <% //} %>
-        </ul>
         <h2>Registrants</h2>
+        <ul>
+            <li><a href="/register/">Register Now!</a></li>
+            <li><a href="/admin/registrants/">Admin: Registrants</a></li>
+        </ul>
 
-        <h2>Add a TODO:</h2>
-        
-        <form action="/addTodo" method="POST">
-            <label for="description">Description:</label>
-            <input type="text" placeholder="Description" name="description" autofocus="autofocus"><br>
-            <label for="priority">Priority:</label>
-            <input type="number" placeholder="Priority" name="priority" value="3">
-            <br>
-            <input type="submit">
-        </form>
 
         <script src="js/main.js" async defer></script>
     </body>
