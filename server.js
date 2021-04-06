@@ -30,9 +30,10 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.get('/admin/event', (req, res) => {
+app.get('/admin/event/:eventID', (req, res) => {
     //TODO: change query, should just get one event
-    db.collection('events').find().sort({eventid:-1}).toArray()
+    let eventID = request.params.eventID.toLowerCase() 
+    db.collection('events').findOne({_id:eventID}).toArray()
         .then(data => {
         res.render('admin/event.ejs',{events:data})
         })

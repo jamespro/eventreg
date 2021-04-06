@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Event Administration</title>
+        <title>Event Administration - Event Info</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		<link rel="stylesheet" href="/css/normalize.css">
 		<link rel="stylesheet" href="/css/style.css">
@@ -20,11 +20,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1>Event Administration</h1>
-        <h2>Events</h2>
+        <h2>Event</h2>
         <ul class="events">
             <% for(let i=0; i < events.length; i++) {%>
                 <li class="events">
-                    <a href="/admin/event/<%= events[i]._id %>"><span class='view fas fa-eye'></span></a>
                     <span class='id'><%= events[i]._id %></span>
                     <span class='eventid'><%= events[i].eventid %></span>
                     <span class='eventcode'><%= events[i].eventcode %></span>
@@ -41,7 +40,7 @@
                 </li>
                 <% } %>
             </ul>
-            <h2>Add an Event:</h2>
+            <h2>Update an Event:</h2>
             
             <form action="/createEvent" method="POST">
             <label for="eventcode">eventcode:</label>
