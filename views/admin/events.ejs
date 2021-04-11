@@ -22,24 +22,25 @@
         <h1>Event Administration</h1>
         <h2>Events</h2>
         <ul class="events">
-            <% for(let i=0; i < events.length; i++) {%>
-                <li class="events">
-                    <a href="/admin/event/<%= events[i]._id %>"><span class='view fas fa-eye'></span></a>
-                    <span class='id'><%= events[i]._id %></span>
-                    <span class='eventid'><%= events[i].eventid %></span>
-                    <span class='eventcode'><%= events[i].eventcode %></span>
-                    <span class='eventname'><%= events[i].eventname %></span>
-                    <span class='eventstartdate'><%= events[i].eventstartdate %></span>
-                    <span class='eventenddate'><%= events[i].eventenddate %></span>
-                    <span class='eventtype'><%= events[i].eventtype %></span>
-                    <span class='eventvenue'><%= events[i].eventvenue %></span>
-                    <span class='eventcity'><%= events[i].eventcity %></span>
-                    <span class='eventstate'><%= events[i].eventstate %></span>
-                    <span class='eventcountry'><%= events[i].eventcountry %></span>
-                    <span class='availablepostevent'><%= events[i].availablepostevent %></span>
+            <li>list item</li>
+            <% events.forEach( el => { %>
+                <li class="events" data-id='<%=el._id%>'>
+                    <a href="/admin/event/<%= el._id %>"><span class='view fas fa-eye'></span></a>
+                    <span class='id'><%= el._id %></span>
+                    <span class='eventid'><%= el.eventid %></span>
+                    <span class='eventcode'><%= el.eventcode %></span>
+                    <span class='eventname'><%= el.eventname %></span>
+                    <span class='eventstartdate'><%= el.eventstartdate %></span>
+                    <span class='eventenddate'><%= el.eventenddate %></span>
+                    <span class='eventtype'><%= el.eventtype %></span>
+                    <span class='eventvenue'><%= el.eventvenue %></span>
+                    <span class='eventcity'><%= el.eventcity %></span>
+                    <span class='eventstate'><%= el.eventstate %></span>
+                    <span class='eventcountry'><%= el.eventcountry %></span>
+                    <span class='availablepostevent'><%= el.availablepostevent %></span>
                     <span class='delete fas fa-trash'></span>
                 </li>
-                <% } %>
+            <% }) %>
             </ul>
             <h2>Add an Event:</h2>
             
