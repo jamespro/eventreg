@@ -6,8 +6,8 @@ router.get('/', adminController.getIndex)
 
 router.get('/events', adminController.getEvents)
 
-// router.get('/event/:id', adminController.getEvent)
+router.post('/event/create', adminController.createEvent)
 
-// router.get('/event/create', adminController.createEvent)
+// router.get('/event/:id', adminController.getEvent)
 
 module.exports = router

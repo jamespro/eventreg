@@ -22,9 +22,9 @@
         <h1>Event Administration</h1>
         <h2>Events</h2>
         <ul class="events">
-            <li>list item</li>
+            <li class="event">just a test LI item before the actual list is supposed to display</li>
             <% events.forEach( el => { %>
-                <li class="events" data-id='<%=el._id%>'>
+                <li class="event" data-id='<%=el._id%>'>
                     <a href="/admin/event/<%= el._id %>"><span class='view fas fa-eye'></span></a>
                     <span class='id'><%= el._id %></span>
                     <span class='eventid'><%= el.eventid %></span>
@@ -37,16 +37,16 @@
                     <span class='eventcity'><%= el.eventcity %></span>
                     <span class='eventstate'><%= el.eventstate %></span>
                     <span class='eventcountry'><%= el.eventcountry %></span>
-                    <span class='availablepostevent'><%= el.availablepostevent %></span>
+                    <span class='availablepostlive'><%= el.availablepostlive %></span>
                     <span class='delete fas fa-trash'></span>
                 </li>
             <% }) %>
             </ul>
             <h2>Add an Event:</h2>
             
-            <form action="/createEvent" method="POST">
+            <form action="/admin/event/create" method="POST">
             <label for="eventcode">eventcode:</label>
-            <input type="text" placeholder="eventcode" name="eventcode" value="pack0921" autofocus="autofocus"><br>
+            <input type="text" placeholder="eventcode" name="eventcode" value="pack0922" autofocus="autofocus"><br>
             <label for="eventname">eventname:</label>
             <input type="text" placeholder="eventname" name="eventname" value="International Packaging Expo 2021">
             <label for="eventstartdate">eventstartdate:</label>
@@ -67,8 +67,8 @@
             <input type="text" placeholder="eventstate" name="eventstate" value="NV">
             <label for="eventcountry">eventcountry:</label>
             <input type="text" placeholder="eventcountry" name="eventcountry" value="United States">
-            <label for="availablepostevent">availablepostevent:</label>
-            <input type="text" placeholder="availablepostevent" name="availablepostevent" value="false">
+            <label for="availablepostlive">availablepostlive:</label>
+            <input type="text" placeholder="availablepostlive" name="availablepostlive" value="false">
             <br>
             <input type="submit">
         </form>

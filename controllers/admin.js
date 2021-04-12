@@ -10,15 +10,31 @@ module.exports = {
     },
     getEvents: async (req,res)=>{
         try{
+            // console.log(req)
             const eventItems = await Event.find()
-            const itemsLeft = await Event.countDocuments({completed: false})
-            res.render('admin/events.ejs', {events: eventItems, left: itemsLeft})
+            //TODO: Remove this console.log when it finally works
+            console.log("eventItems", eventItems)
+            //should be showing all the events in the database
+            res.render('admin/events.ejs', {events: eventItems})
         }catch(err){
             console.log(err)
         }
     },
+    createEvent: async (res, req) => {
+        try {
+            //TODO: Remove this console.log when it finally works
+            console.log(req)
+            //should accept all the fields from the create event form
+            await Event.create({eventcode: req.body.eventcode, eventname: req.body.eventname, eventstartdate: req.body.eventstartdate, eventenddate: req.body.eventenddate, eventtype: req.body.eventtype, eventvenue: req.body.eventvenue, eventcity: req.body.eventcity, eventstate: req.body.eventstate, eventcountry: req.body.eventcountry, availablepostlive: req.body.availablepostlive})
+            console.log('Event has been added!')
+            res.redirect('/admin/events')
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
 }
+
 
 // app.get('/admin/event/:eventID', (req, res) => {
 //     //TODO: change query, should just get one event
