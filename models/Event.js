@@ -43,9 +43,6 @@ const EventSchema = new mongoose.Schema({
   },
   availablepostlive: {
     type: Boolean,
-  },
-  availablepostlive: {
-    type: Boolean,
   }
 })
 
