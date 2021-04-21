@@ -15,12 +15,12 @@ const EventSchema = new mongoose.Schema({
     required: true,
   },
   eventstartdate: {
-      //TODO: make this default to the future
+      //TODO: make this default to a date in the future
     type: Date,
     default: Date.now
   },
     eventenddate: {
-      //TODO: make this default to the future
+      //TODO: make this default to a date in the future plus one week
     type: Date,
     default: Date.now
   },
@@ -40,6 +40,9 @@ const EventSchema = new mongoose.Schema({
   },
   eventcountry: {
     type: String,
+  },
+  availablepostlive: {
+    type: Boolean,
   },
   availablepostlive: {
     type: Boolean,
