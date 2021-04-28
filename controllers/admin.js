@@ -20,7 +20,7 @@ module.exports = {
             console.log(err)
         }
     },
-    createEvent: async (res, req) => {
+    createEvent: async (req, res) => {
         try {
             //TODO: Remove this console.log when it finally works
             console.log(req)
