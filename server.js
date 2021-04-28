@@ -4,7 +4,7 @@ const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const adminRoutes = require('./routes/admin')
 const PORT = 3333 //TODO: why do I need to set this here? It should be looking in the .env file
-const morgan = require('morgan')
+// const morgan = require('morgan')
 require('dotenv').config({path:'./config/.env'})
 
 connectDB()
@@ -16,8 +16,9 @@ app.use(express.json())
 
 // Logging
 //TODO: I don't think this is working. Where is it looking for NODE_ENV? Commenting it out for now.
+//TODO: I'm just going to take out morgan so it works on heroku, for now
 // if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'))
+//     app.use(morgan('dev'))
 // }
 
 app.use('/', homeRoutes)
