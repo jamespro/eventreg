@@ -7,35 +7,8 @@ const router = express.Router();
 //TODO: update the model so it matches the fields that are output in JSON at the end of the order.
 //TODO: maybe this route should be named createOrder or createComplete
 router.post("/complete", async (req, res) => {
-        try {
-            //TODO: Remove this console.log when it finally works
-            console.log(req)
-            //should accept all the fields from the create event form
-            await Complete.create({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                address1: req.body.address1,
-                address2: req.body.address2,
-                city: req.body.city,
-                state: req.body.state,
-                zipcode: req.body.zipcode,
-                country: req.body.country,
-                useAddressForPaymentDetails: req.body.useAddressForPaymentDetails,
-                nameOnCard: req.body.nameOnCard,
-                cardNumber: req.body.cardNumber,
-                expirationDate: req.body.expirationDate,
-                cvv: req.body.cvv
-            })
-            console.log('Event has been added!')
-            res.json({ message: "Your order has been submitted" });
-        } catch (err) {
-            console.log(err)
-            res.status(500).json({ error: "Cannot create complete order at the moment!" })
-        }
-
-
-    //TODO: Can I just use the spread/rest operator here instead of listing every field?
-// const { firstName, lastName, address1, address2, city, state, zipcode, country, useAddressForPaymentDetails, nameOnCard, cardNumber, expirationDate, cvv } = req.body;
+//TODO: Can I just use the spread/rest operator here instead of listing every field?
+const { firstName, lastName, address1, address2, city, state, zipcode, country, useAddressForPaymentDetails, nameOnCard, cardNumber, expirationDate, cvv } = req.body;
 
 //   const alreadyExistsUser = await User.findOne({ where: { email } }).catch(
     //     (err) => {
@@ -48,16 +21,16 @@ router.post("/complete", async (req, res) => {
             //   }
             
 //TODO: Can I just use the spread/rest operator here instead of listing every field?
-//   const newComplete = new Complete({ firstName, lastName, address1, address2, city, state, zipcode, country, useAddressForPaymentDetails, nameOnCard, cardNumber, expirationDate, cvv });
+  const newComplete = new Complete({ firstName, lastName, address1, address2, city, state, zipcode, country, useAddressForPaymentDetails, nameOnCard, cardNumber, expirationDate, cvv });
 //TODO: I'm not using axios, so I think I need to modify savedComplete to save the record to the mongodb database instead of this syntax; instead of save(). Check controllers. -- switch save() to create()
-    // const savedComplete = await newComplete.create().catch((err) => {
-    // console.log("Error: ", err);
-    // res.status(500).json({ error: "Cannot create complete order at the moment!" });
-//   });
+    const savedComplete = await newComplete.create().catch((err) => {
+    console.log("Error: ", err);
+    res.status(500).json({ error: "Cannot create complete order at the moment!" });
+  });
 
-    // if (savedComplete){
-    //     res.json({ message: "Your order has been submitted" });
-    // }
+    if (savedComplete){
+        res.json({ message: "Your order has been submitted" });
+    }
 });
 
 module.exports = router;
