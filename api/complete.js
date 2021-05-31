@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../models/Complete");
+const Complete = require("../models/Complete");
 
 const router = express.Router();
 //TODO: I don't love the naming... Is it "Order" or "complete"... because this is a temporary situation of submitting everything for the entire order, once at the end. Order should just have order information eventually, e.g. should not include all the user information, just a reference to the user record. So rename this file "complete"?
@@ -11,7 +11,21 @@ router.post("/complete", async (req, res) => {
             //TODO: Remove this console.log when it finally works
             console.log(req)
             //should accept all the fields from the create event form
-            await Complete.create({firstName: req.body.firstName, lastName: req.body.lastName, address1: req.body.address1, address2: req.body.address2, city: req.body.city, state: req.body.state, zipcode: req.body.zipcode, country: req.body.country, useAddressForPaymentDetails: req.body.useAddressForPaymentDetails, nameOnCard: req.body.nameOnCard, cardNumber: req.body.cardNumber, expirationDate: req.body.expirationDate, cvv: req.body.cvv})
+            await Complete.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                address1: req.body.address1,
+                address2: req.body.address2,
+                city: req.body.city,
+                state: req.body.state,
+                zipcode: req.body.zipcode,
+                country: req.body.country,
+                useAddressForPaymentDetails: req.body.useAddressForPaymentDetails,
+                nameOnCard: req.body.nameOnCard,
+                cardNumber: req.body.cardNumber,
+                expirationDate: req.body.expirationDate,
+                cvv: req.body.cvv
+            })
             console.log('Event has been added!')
             res.json({ message: "Your order has been submitted" });
         } catch (err) {
