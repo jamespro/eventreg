@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("/complete", async (req, res) => {
         try {
             //TODO: Remove this console.log when it finally works
-            console.log(req)
+            //console.log(req)
             //should accept all the fields from the create event form
             await Complete.create({
                 firstName: req.body.firstName,
