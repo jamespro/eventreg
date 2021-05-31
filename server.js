@@ -24,7 +24,7 @@ app.use(express.json())
 
 app.use('/', homeRoutes)
 app.use('/admin', adminRoutes)
-app.use("/api/v1", api)
+app.use("/api", api)
 
 //TODO: Here it should not need to have the "OR". It should be getting the environment variable from the .env file
 app.listen(process.env.PORT || PORT, () => {
