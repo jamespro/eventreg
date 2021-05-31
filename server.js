@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require("cors")
 const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const adminRoutes = require('./routes/admin')
@@ -14,6 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors())
 
 // Logging
 //TODO: I don't think this is working. Where is it looking for NODE_ENV? Commenting it out for now.
