@@ -1,4 +1,4 @@
-# eventreg
+# eventreg w/API
 
 Work in progress: Vanilla javascript test of adding/removing events using MongoDB database
 
