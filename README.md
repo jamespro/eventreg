@@ -7,6 +7,7 @@ Demo URL: https://eventregg.herokuapp.com/
 Includes API for event registration
 
 ## TODO
+- [ ] Admin: Consider using react-admin package
 - [ ] Reg: Add Model
 - [ ] Demo: Add Model
 - [ ] Item: Add Model
