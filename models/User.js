@@ -7,6 +7,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
     default: uuidv4
   },
+  showcode: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true,
