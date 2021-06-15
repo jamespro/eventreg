@@ -19,12 +19,12 @@
   "homepage": "https://github.com/jamespro/eventreg#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongodb": "^3.6.5",
-    "mongoose": "^5.12.3",
-    "react-admin": "^3.16.0"
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.13",
+    "react-admin": "^3.16.2"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

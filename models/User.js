@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+  },
   firstName: {
     type: String,
     required: true,
@@ -36,6 +40,14 @@ const UserSchema = new mongoose.Schema({
   useAddressForPaymentDetails: {
       type: Boolean,
       default: false
+  },
+  acceptedTerms: {
+      type: Boolean,
+      default: false
+  },
+  jobType: {
+      type: String,
+      required: false
   },
     createdAt: {
     type: Date,
