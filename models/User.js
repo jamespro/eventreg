@@ -1,6 +1,12 @@
 const mongoose = require('mongoose')
+const { v4 : uuidv4 } = require('uuid');
 
 const UserSchema = new mongoose.Schema({
+  uuid: {
+    type: String,
+    required: true,
+    default: uuidv4
+  },
   email: {
     type: String,
     required: true,
@@ -49,7 +55,12 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: false
   },
-    createdAt: {
+  regStatus: {
+      type: String,
+      default: 'temp',
+      required: true
+  },
+  createdAt: {
     type: Date,
     default: Date.now
   }
