@@ -4,8 +4,9 @@ const User = require("../models/User");
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
-
-    const { showcode, firstName, lastName, address1, address2, city, state, zipcode, country, email, acceptedTerms, jobType } = req.body;
+    // console.log(req.body);
+    //NOTE: JWP: USING req.body.VALUES is the key if you're getting from Formik. It's sending actions as well (currently).
+    const { showcode, firstName, lastName, address1, address2, city, state, zipcode, country, email, acceptedTerms, jobType } = req.body.values;
 
     const alreadyExistsUser = await User.findOne({ email: email, showcode: showcode }).catch(
         (err) => {
