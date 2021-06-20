@@ -26,7 +26,15 @@ router.post("/register", async (req, res) => {
 
     if (savedUser) {
         //TODO: Return ID from mongodb or anything else from the record
-        res.json({ message: "Thanks for registering" });
+        savedUuid = savedUser.uuid;
+        savedShowcode = savedUser.showcode;
+        res.json({
+            // message: "Thanks for registering",
+            // registrantData: {
+                uuid: savedUuid,
+                showcode: savedShowcode
+            // }
+        });
     }
 });
 
