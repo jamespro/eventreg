@@ -22,7 +22,20 @@ router.post("/addItems", async (req, res) => {
 //     return res.status(409).json({ message: "User already has items!" });
 //   }
 
-  const newItems = new Items({ uuid, showcode, itemEXPO, itemCONF, itemCONFPREMIUM, itemONEDAYSAT, itemONEDAYSUN, itemBANQ, itemBANQTABLE, itemTOUR1, itemTOUR2, itemTSHIRT });
+    const newItems = new Items({
+        uuid,
+        showcode,
+        itemEXPO,
+        itemCONF,
+        itemCONFPREMIUM,
+        itemONEDAYSAT,
+        itemONEDAYSUN,
+        itemBANQ,
+        itemBANQTABLE,
+        itemTOUR1,
+        itemTOUR2,
+        itemTSHIRT
+    });
   const savedItems = await newItems.save().catch((err) => {
     console.log("Error: ", err);
     res.status(500).json({ error: "Cannot add items at the moment!" });

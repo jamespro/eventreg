@@ -2,9 +2,6 @@ const express = require('express')
 const app = express()
 const cors = require("cors")
 const connectDB = require('./config/database')
-const homeRoutes = require('./routes/home')
-const adminRoutes = require('./routes/admin')
-const api = require('./api')
 const PORT = 3333 //TODO: why do I need to set this here? It should be looking in the .env file
 // const morgan = require('morgan')
 require('dotenv').config({path:'./config/.env'})
@@ -23,7 +20,10 @@ app.use(cors())
 // if (process.env.NODE_ENV === 'development') {
 //     app.use(morgan('dev'))
 // }
-
+    
+const homeRoutes = require('./routes/home')
+const adminRoutes = require('./routes/admin')
+const api = require('./api')
 app.use('/', homeRoutes)
 app.use('/admin', adminRoutes)
 app.use("/api", api)
