@@ -10,7 +10,20 @@ router.post("/addItems", async (req, res) => {
     //TODO: Maybe addItem is different from addItems?
     //TODO: I should delete all items --TEMP STATUS ITEMS-- when I addItems
 
-    const { uuid, showcode, itemEXPO, itemCONF, itemCONFPREMIUM, itemONEDAYSAT, itemONEDAYSUN, itemBANQ, itemBANQTABLE, itemTOUR1, itemTOUR2, itemTSHIRT } = req.body.values;
+    const {
+        uuid,
+        showcode,
+        itemEXPO,
+        itemCONF,
+        itemCONFPREMIUM,
+        itemONEDAYSAT,
+        itemONEDAYSUN,
+        itemBANQ,
+        itemBANQTABLE,
+        itemTOUR1,
+        itemTOUR2,
+        itemTSHIRT
+    } = req.body.values;
 
 //     const alreadyExistsItems = await Items.findOne({ uuid: uuid, showcode: showcode }).catch(
 //         (err) => {
