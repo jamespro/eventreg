@@ -30,6 +30,28 @@ router.get("/users", async (req, res) => {
     res.json({users});
 });
 
+//GET_ONE BY UUID
+router.get("/user", async (req, res) => {
+    let uuid = req.params.uuid.toLowerCase() //this is going to be a Mongo _id
+
+    const foundUser = await User.findOne({ uuid: uuid }).catch(
+        (err) => {
+            console.log("Error: ", err);
+        }
+    );
+
+  if (!foundUser) {
+    return res.status(409).json({ message: "Could not find user" });
+  }
+
+    if (foundUser) {
+        //TODO: NEED TO RETURN ALL THE USER INFO IN JSON
+        //TODO: CAN WE JUST SET IT TO SEND WHATEVER IT FINDS? NOT LIST EVERYTHING
+        //WILL THIS WORK?
+        res.json({foundUser});
+    }
+});
+
 //GET_ONE
 router.get("/users/:userId", async (req, res) => {
     let userId = req.params.userId.toLowerCase() //this is going to be a Mongo _id
