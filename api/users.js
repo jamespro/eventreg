@@ -32,7 +32,7 @@ router.get("/users", async (req, res) => {
 
 //GET_ONE BY UUID
 router.get("/user", async (req, res) => {
-    let uuid = req.params.uuid.toLowerCase() //this is going to be a Mongo _id
+    let uuid = req.params.uuid.toLowerCase() //this is going to be a Mongo _id // wait we want it to be a uuid
 
     const foundUser = await User.findOne({ uuid: uuid }).catch(
         (err) => {
